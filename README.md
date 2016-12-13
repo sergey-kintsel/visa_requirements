@@ -29,4 +29,12 @@ To run the app you need to:
 
 ## Misc
 
-Currently only Kazakhstan, Belarus, Poland, Bulgaria and Russia are supported as parameters
+Currently only these countries are supported as parameters:
+  - Kazakhstan
+  - Belarus
+  - Poland
+  - Bulgaria
+  - Russia
+  - USA
+  - Ukraine
+

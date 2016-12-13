@@ -8,7 +8,9 @@ config :visa_requirements,
     pl: "https://en.wikipedia.org/wiki/Visa_requirements_for_Polish_citizens",
     by: "https://en.wikipedia.org/wiki/Visa_requirements_for_Belarusian_citizens",
     bg: "https://en.wikipedia.org/wiki/Visa_requirements_for_Bulgarian_citizens",
-    ru: "https://en.wikipedia.org/wiki/Visa_requirements_for_Russian_citizens"
+    ru: "https://en.wikipedia.org/wiki/Visa_requirements_for_Russian_citizens",
+    ua: "https://en.wikipedia.org/wiki/Visa_requirements_for_Ukrainian_citizens",
+    us: "https://en.wikipedia.org/wiki/Visa_requirements_for_United_States_citizens"
   }
 
 config :visa_requirements,
