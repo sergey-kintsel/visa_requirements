@@ -1,6 +1,7 @@
 defmodule DataProcessor do
   @good_signs ["Visa not required", "Visa on arrival", "Online Visitor",
-               "eVisa", "e-Tourist Visa", "e-Visa", "Tourist Card on arrival"]
+               "eVisa", "e-Tourist Visa", "e-Visa", "Tourist Card on arrival",
+               "Electronic Travel Authorization", "Permit on arrival"]
   def process(list) do
     [first | rest] = Enum.map(list, &process_data/1)
     Enum.reduce(first, [], fn country, acc ->
@@ -17,9 +18,9 @@ defmodule DataProcessor do
 
   defp process_data(data) do
     data
-    |> Enum.filter_map(fn [_, requirement, _] ->
+    |> Enum.filter_map(fn %RequirementRecord{requirement: requirement} ->
       not_required?(requirement)
-    end, fn [country, _, _] -> country end)
+    end, fn %RequirementRecord{country: country} -> country end)
   end
 
   defp not_required?(string) do
