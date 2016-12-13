@@ -1,4 +1,6 @@
 defmodule DataProcessor do
+  @good_signs ["Visa not required", "Visa on arrival", "Online Visitor",
+               "eVisa", "e-Tourist Visa", "e-Visa", "Tourist Card on arrival"]
   def process(list) do
     [first | rest] = Enum.map(list, &process_data/1)
     Enum.reduce(first, [], fn country, acc ->
@@ -22,7 +24,7 @@ defmodule DataProcessor do
 
   defp not_required?(string) do
     # do something about "EU !Visa not required"
-    ["Visa not required", "Visa on arrival", "Online Visitor", "eVisa"]
+    @good_signs
     |> Enum.map(&String.downcase/1)
     |> Enum.any?(&(String.contains?(String.downcase(string), &1)))
   end
